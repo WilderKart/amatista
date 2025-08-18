@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amatista | Bisutería Fina Elegante</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Descubre colecciones exclusivas de bisutería fina en Amatista. Diseños únicos, elegancia atemporal.">
+    <meta name="keywords" content="bisutería, joyería, moda, accesorios, Amatista">
+    <meta property="og:title" content="Amatista | Bisutería Fina Elegante">
+    <meta property="og:description" content="Piezas únicas hechas a mano para mujeres que brillan.">
+    <meta property="og:image" content="https://example.com/og-image.jpg">
+    <meta property="og:url" content="https://amatista.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <base href="http://127.0.0.1:5500/Frontend/">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+  <img src="./asset/images/Red_Blue.png" alt="Amatista Logo" class="logo-navbar me-2">
+  <span class="fw-bold">Amatista</span>
+</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section with Video Background -->
+        <section class="hero py-5 position-relative">
+            <div class="video-container position-absolute top-0 start-0 w-100 h-100">
+                <video class="w-100 h-100 object-cover" autoplay loop muted playsinline>
+                    <source src="/Frontend/asset/video/219228_small.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                    </source>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-30"></div>
+            </div>
+            <div class="container position-relative text-white text-center">
+                <h1 class="display-1 fw-bold mb-4">Amatista</h1>
+                <p class="lead mb-5">Bisutería fina que celebra tu elegancia única</p>
+                <div class="badges">
+                    <span class="badge bg-primary me-2">Nueva Colección</span>
+                    <span class="badge bg-light text-dark">Diseño Artesanal</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-4 fw-bold mb-3">Nuestra Colección</h2>
+                    <p class="lead text-muted">Explora nuestras categorías y encuentra la pieza perfecta para ti</p>
+                </div>
+
+                <!-- Category Tabs -->
+                <ul class="nav nav-pills justify-content-center mb-4" id="productTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="manillas-tab" data-bs-toggle="tab"
+                            data-bs-target="#manillas" type="button" role="tab">Manillas</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="collares-tab" data-bs-toggle="tab" data-bs-target="#collares"
+                            type="button" role="tab">Collares</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="anillos-tab" data-bs-toggle="tab" data-bs-target="#anillos"
+                            type="button" role="tab">Anillos</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="cadenas-tab" data-bs-toggle="tab" data-bs-target="#cadenas"
+                            type="button" role="tab">Cadenas</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pulseras-tab" data-bs-toggle="tab" data-bs-target="#pulseras"
+                            type="button" role="tab">Pulseras</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="aretes-tab" data-bs-toggle="tab" data-bs-target="#aretes"
+                            type="button" role="tab">Aretes</button>
+                    </li>
+                </ul>
+
+                <!-- Tab Content -->
+                <div class="tab-content" id="productTabsContent">
+                    <!-- Manillas Tab -->
+                    <div class="tab-pane fade show active" id="manillas" role="tabpanel">
+                        <div class="row g-4" id="manillas-container">
+                            <!-- Products will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Collares Tab -->
+                    <div class="tab-pane fade" id="collares" role="tabpanel">
+                        <div class="row g-4" id="collares-container">
+                            <!-- Products will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Anillos Tab -->
+                    <div class="tab-pane fade" id="anillos" role="tabpanel">
+                        <div class="row g-4" id="anillos-container">
+                            <!-- Products will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Cadenas Tab -->
+                    <div class="tab-pane fade" id="cadenas" role="tabpanel">
+                        <div class="row g-4" id="cadenas-container">
+                            <!-- Products will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Pulseras Tab -->
+                    <div class="tab-pane fade" id="pulseras" role="tabpanel">
+                        <div class="row g-4" id="pulseras-container">
+                            <!-- Products will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Aretes Tab -->
+                    <div class="tab-pane fade" id="aretes" role="tabpanel">
+                        <div class="row g-4" id="aretes-container">
+                            <!-- Products will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="productModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="position-relative">
+                                <img id="modal-product-image" class="img-fluid rounded-3 w-100" src="" alt="">
+                                <div class="position-absolute top-0 start-0 w-100 h-100 rounded-3"
+                                    style="background: linear-gradient(135deg, rgba(222, 201, 240, 0.1) 0%, rgba(242, 202, 234, 0.1) 100%); pointer-events: none;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 id="modal-product-name" class="mb-3"></h3>
+
+                            <!-- Price and Discount -->
+                            <div class="d-flex align-items-center mb-3">
+                                <span id="modal-product-price" class="display-6 fw-bold text-primary"></span>
+                                <span id="modal-product-discount" class="ms-3 text-success fw-bold"
+                                    style="display: none;"></span>
+                            </div>
+
+                            <!-- Stock Information -->
+                            <div class="d-flex align-items-center mb-4">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                <span id="modal-product-stock" class="text-success fw-bold">En stock</span>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-muted mb-4" id="modal-product-description">Cada pieza de Amatista está
+                                diseñada con precisión artesanal, combinando materiales premium y diseño contemporáneo
+                                para crear joyas que trascienden las temporadas.</p>
+
+                            <!-- Features -->
+                            <div class="mb-4">
+                                <h5 class="fw-bold mb-3">Características:</h5>
+                                <ul class="list-unstyled" id="modal-product-features">
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Material: Oro de 18k
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Acabado: Pulido
+                                        espejo</li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Resistente al agua
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Hipoalergénico</li>
+                                </ul>
+                            </div>
+
+                            <!-- Variants -->
+                            <div class="mb-4">
+                                <h5 class="fw-bold mb-3">Variantes:</h5>
+                                <div class="d-flex gap-2 flex-wrap" id="modal-product-variants">
+                                    <button class="btn btn-outline-primary btn-sm active">Oro</button>
+                                    <button class="btn btn-outline-primary btn-sm">Plata</button>
+                                    <button class="btn btn-outline-primary btn-sm">Cobre</button>
+                                </div>
+                            </div>
+
+                            <!-- Quantity Selector -->
+                            <div class="d-flex align-items-center mb-4">
+                                <label class="me-3 fw-bold">Cantidad:</label>
+                                <div class="input-group" style="width: 150px;">
+                                    <button class="btn btn-outline-secondary" type="button"
+                                        onclick="decreaseQuantity()">-</button>
+                                    <input type="text" class="form-control text-center" value="1" id="quantity-input"
+                                        readonly>
+                                    <button class="btn btn-outline-secondary" type="button"
+                                        onclick="increaseQuantity()">+</button>
+                                </div>
+                            </div>
+
+                            <!-- Buy Button --> <button class="btn btn-dark btn-lg w-100 py-3 mb-3" onclick="buyNow()">
+                                <i class="fab fa-whatsapp me-2"></i>Comprar ahora
+                            </button>
+
+                            <!-- Payment Methods -->
+                            <div class="text-center mb-4">
+                                <small class="text-muted">Métodos de pago:</small>
+                                <div class="d-flex justify-content-center gap-3 mt-2">
+                                    <img src="/Frontend/asset/images/nequi.png" alt="Nequi" class="payment-icon">
+                                    <img src="/Frontend/asset/images/bancolombia.png" alt="Bancolombia"
+                                        class="payment-icon">
+                                </div>
+                            </div>
+
+                            <!-- Delivery and Warranty -->
+                            <div class="bg-light p-3 rounded-3 mb-4">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-truck text-primary me-2"></i>
+                                    <span>Entrega en 3-5 días hábiles</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-shield-alt text-primary me-2"></i>
+                                    <span>Garantía de 12 meses</span>
+                                </div>
+                            </div>
+
+                            <!-- Share Buttons -->
+                            <div class="text-center">
+                                <small class="text-muted d-block mb-2">Compartir:</small>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a href="#" class="text-primary"><i class="fab fa-facebook fa-lg"></i></a>
+                                    <a href="#" class="text-primary"><i class="fab fa-instagram fa-lg"></i></a>
+                                    <a href="#" class="text-primary"><i class="fab fa-pinterest fa-lg"></i></a>
+                                    <a href="#" class="text-primary"><i class="fas fa-share fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Products -->
+                    <div class="mt-5 pt-4 border-top">
+                        <h5 class="fw-bold mb-4">Productos relacionados</h5>
+                        <div class="row g-3" id="related-products">
+                            <!-- Related products will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button --> <a href="https://wa.me/573136649642" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h3 class="h4 mb-4">Amatista</h3>
+                    <p class="mb-4">Bisutería fina con alma. Cada pieza cuenta una historia de elegancia y autenticidad,
+                        diseñada para mujeres que brillan con luz propia.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/bisuteriamatista/" target="_blank" rel="noopener noreferrer"
+                            class="me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100063539574683" target="_blank"
+                            rel="noopener noreferrer" class="me-3"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#"><i class="fab fa-tiktok fa-2x"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2 mb-4 mb-md-0">
+                    <h5 class="mb-4">Explora</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-muted">Catálogo</a></li>
+                        <li class="mb-2"><a href="nosotros.html" class="text-decoration-none text-muted">Nosotros</a>
+                        </li>
+                        <li class="mb-2"><a href="blog.html" class="text-decoration-none text-muted">Blog</a></li>
+                        <li class="mb-2"><a href="contacto.html" class="text-decoration-none text-muted">Contáctanos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5 class="mb-4">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="politica-privacidad.html"
+                                class="text-decoration-none text-muted">Política de privacidad</a></li>
+                        <li class="mb-2"><a href="terminos-condiciones.html"
+                                class="text-decoration-none text-muted">Términos y condiciones</a></li>
+                        <li class="mb-2"><a href="politica-devoluciones.html"
+                                class="text-decoration-none text-muted">Política de devoluciones</a></li>
+                        <li class="mb-2"><a href="politica-cookies.html"
+                                class="text-decoration-none text-muted">Política de cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-2 text-muted">&copy; 2025 Amatista. Todos los derechos reservados.</p>
+                <p class="mb-0 text-muted small">
+                    Diseñado por 
+                    <a href="https://tecnhoultra.com/" target="_blank" rel="noopener noreferrer" class="fw-bold text-decoration-none text-muted">Tecnhoultra</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/Frontend/js/products.js"></script>
+    <script src="/Frontend/js/main.js"></script>
+</body>
+
+</html>

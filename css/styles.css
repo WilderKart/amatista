@@ -1,0 +1,551 @@
+/* css/styles.css */
+
+:root {
+  --amatista-primary: #DEC9F0;
+  --amatista-secondary: #D8BEE5;
+  --amatista-accent: #F2CAEA;
+  --background: #FFFFFF;
+  --background-soft: #F8F0FC;
+  --background-tint: #F5E6FA;
+  --neutral-900: #0f0f10;
+  --neutral-700: #2a2a2d;
+  --neutral-500: #6b6e76;
+  --neutral-300: #c9cad1;
+  --neutral-100: #F9F4F8;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,.08);
+  --shadow-glass: 0 8px 30px rgba(0,0,0,.10);
+--font-display: 'Playfair Display', 'Nunito', 'Poppins', serif;
+--font-body: 'Poppins', 'Open Sans', 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--background);
+  color: var(--neutral-900);
+  line-height: 1.6;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display) !important;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Navbar */
+.navbar {
+  background: white;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(222, 201, 240, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 20px rgba(222, 201, 240, 0.3);
+}
+
+.logo-navbar {
+  height: 100px;
+  width: auto;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--neutral-900) !important;
+  position: relative;
+  background: linear-gradient(90deg, var(--amatista-primary), var(--amatista-secondary), var(--amatista-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar-brand::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amatista-primary), var(--amatista-secondary));
+  transition: width 0.3s ease;
+}
+
+.navbar-brand:hover::after {
+  width: 100%;
+}
+
+.nav-link {
+  color: var(--neutral-700) !important;
+  font-weight: 500;
+  font-size: 1.3rem;
+  position: relative;
+  padding: 0.5rem 1rem !important;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amatista-primary), var(--amatista-secondary));
+  transition: width 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--amatista-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--background) 0%, var(--background-soft) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, var(--amatista-primary) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, var(--amatista-accent) 0%, transparent 50%);
+  background-size: 400px 400px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.badges .badge {
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background: linear-gradient(90deg, var(--amatista-primary), var(--amatista-secondary));
+  color: white;
+  box-shadow: 0 4px 15px rgba(222, 201, 240, 0.4);
+}
+
+/* Estilo para el badge de descuento en la tarjeta de producto */
+.product-card .badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2; /* Debe ser mayor que el z-index del product-card (1) */
+}
+
+/* Video Container */. video-container {
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video-container video {
+  object-fit: cover;
+}
+
+/* Products Section */.products {
+  background: white;
+}
+
+/* Tab Navigation */
+.nav-pills .nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--neutral-700);
+  background: white;
+  border: 1px solid var(--neutral-300);
+  transition: all 0.3s ease-in-out;
+  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  min-width: 150px;
+}
+
+.nav-pills .nav-link:hover {
+  color: var(--neutral-900) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+  border-color: var(--amatista-primary);
+}
+
+.nav-pills .nav-link.active {
+  color: white !important;
+  background: linear-gradient(135deg, var(--amatista-primary), var(--amatista-secondary));
+  border-color: var(--amatista-primary);
+  box-shadow: 0 10px 25px rgba(222, 201, 240, 0.5);
+  transform: translateY(-5px);
+}
+
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .logo-fixed img {
+    height: 45px;     /* más pequeño en móviles */
+  }
+}  
+
+
+/* Product Cards */.product-card {
+  background: white;
+  border-radius: 0 !important; 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: 1px solid rgba(222, 201, 240, 0.3);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--background) 0%, var(--background-soft) 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-md);
+  border-color: var(--amatista-primary);
+  
+}
+
+.product-card img {
+  border-radius: 0 !important;
+  transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-card:hover img {
+  transform: scale(1.0);
+}
+
+.product-card h3 {
+  color: var(--neutral-900);
+  transition: color 0.3s ease;
+}
+
+.product-card:hover h3 {
+  color: var(--amatista-primary);
+}
+
+.product-card .price {
+  background: linear-gradient(90deg, var(--amatista-primary), var(--amatista-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Rating Stars */.rating {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--neutral-500);
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+.fas.fa-star {
+  color: #FFD700;
+}
+
+.fas.fa-star-half-alt {
+  color: #FFD700;
+}
+
+/* Product Modal */.modal-content {
+  background: white;
+  border: 1px solid rgba(222, 201, 240, 0.3);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(222, 201, 240, 0.3);
+}
+
+.modal-header {
+  border-bottom: none;
+  padding: 1.5rem;
+}
+
+.modal-body {
+  padding: 0 1.5rem 1.5rem;
+}
+
+#modal-product-price {
+  background: linear-gradient(90deg, var(--amatista-primary), var(--amatista-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Payment Icons */.payment-icon {
+  width: 32px;
+  height: 32px;
+
+  transition: all 0.3s ease;
+}
+
+.payment-icon:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+
+/* WhatsApp Button */.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25D366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+
+/* Estilos para estandarizar las imágenes de las tarjetas de producto */
+.products .card .card-img-top,
+#productModal .card .card-img-top {
+  width: 100%;
+  /* Establece una relación de aspecto cuadrada. Puedes cambiarla a 4/3 para una relación 4:3, por ejemplo. */
+  aspect-ratio: 1 / 1;
+  /* Asegura que la imagen cubra el área sin distorsionarse. El exceso se recorta. */
+  object-fit: cover;
+}
+
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-float:hover {
+  background-color: #128C7E;
+  transform: scale(1.1);
+}
+
+.whatsapp-float i {
+  margin-top: 2px;
+}
+
+/* Footer */
+.footer {
+  background: white;
+  border-top: 1px solid rgba(222, 201, 240, 0.3);
+  margin-top: 0;
+  box-shadow: 0 -5px 20px rgba(222, 201, 240, 0.2);
+}
+
+.footer ul a {
+  color: var(--neutral-700);
+  transition: color 0.3s ease;
+}
+
+.footer ul a:hover {
+  color: var(--amatista-primary);
+}
+
+
+/* Social Icons */
+.social-icons a {
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+}
+
+/* Social Icons Original Colors */
+.social-icons .fa-facebook {
+  color: #1877F2 !important;
+}
+
+.social-icons .fa-instagram {
+  background: radial-gradient(circle at 30% 107%, 
+    #fdf497 0%, #fdf497 5%, 
+    #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.social-icons .fa-tiktok {
+  color: #010101 !important;
+}
+
+.product-card img {
+  width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+  height: auto; /* Mantendrá la proporción de la imagen */
+  aspect-ratio: 4 / 3; /* Define una proporción fija (puedes ajustar según tus necesidades) */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  border-radius: 0; /* Asegúrate de que no haya bordes redondeados */
+}
+
+/* Main Content */.main-content {
+  margin-top: 100px;
+  flex: 1;
+}
+
+/* Estilos para la página "Nosotros" */
+.about p.lead + p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+
+
+.parr {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.about .accordion-button {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.about .accordion-body {
+  font-size: 1.1rem; /* Aumenta el tamaño de la fuente para mejor legibilidad */
+  line-height: 1.7;
+}
+
+/* Responsive Design */@media (max-width: 991.98px) {
+  .hero {
+    min-height: 90vh;
+  }
+  
+  .display-1 {
+    font-size: 3.5rem;
+  }
+  
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .nav-pills .nav-link {
+    margin: 4px 0;
+  }
+}
+
+
+
+@media (max-width: 767.98px) {
+  .hero {
+    min-height: 80vh;
+    padding: 5rem 0;
+  }
+  
+  .display-1 {
+    font-size: 2.5rem;
+  }
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .badges {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 30px;
+    right: 30px;
+    font-size: 24px;
+  }
+  
+  .modal-dialog {
+    margin: 1rem;
+  }
+  
+  .modal-content {
+    border-radius: 16px;
+  }
+} 
+
+@media (max-width: 575.98px) {
+  .display-1 {
+    font-size: 2rem;
+  }
+  .display-4 {
+    font-size: 1.8rem;
+  }
+  
+  .main-content {
+    margin-top: 90px;
+  }
+  
+  .payment-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
